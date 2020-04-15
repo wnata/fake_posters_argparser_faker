@@ -16,8 +16,6 @@ def post_name(address, qty):
             )
         except ConnectionRefusedError:
             print('ConnectionError')
-    return resp.status_code
-
 
 
 def args():
