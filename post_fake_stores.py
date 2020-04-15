@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 import argparse
 from faker import Faker
@@ -11,7 +11,7 @@ def post_stores(address, qty):
 
     for i in range(qty):
         lstore_name = faker.words(2)
-        city = fake.city()
+        city = faker.city()
         user_id = randint(1, 10)
         try:
             resp = requests.post(address,
@@ -20,7 +20,7 @@ def post_stores(address, qty):
                                     'manager_id': user_id}]
                                 ) 
         except:
-            print('ConnctionError')
+            print('ConnectionError')
 
 def args():
     parser = argparse.ArgumentParser()
@@ -35,4 +35,4 @@ def args():
 
 if __name__ == '__main__':
     args = args()
-    post_goods(args.address, args.quantity)
+    post_stores(args.address, args.quantity)

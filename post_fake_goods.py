@@ -8,6 +8,7 @@ from random import randint
 faker = Faker()
 
 def post_goods(address, qty):
+    
     for i in range(qty):
         try:
             good = faker.word()
@@ -25,8 +26,10 @@ def post_goods(address, qty):
 def args():
     parser = argparse.ArgumentParser()
     
-    parser.add_argument('-a', '--address', dest='address', action='store', default='http://127.0.0.1:5000/goods', help='receives http address like "http://..."')
-    parser.add_argument('-q', '--quantity', dest='quantity', action='store', default=1, type=int, help='receives integer')
+    parser.add_argument('-a', '--address', dest='address', action='store', default='http://127.0.0.1:5000/goods',
+                         help='receives http address like "http://..."')
+    parser.add_argument('-q', '--quantity', dest='quantity', action='store', default=1,
+                         type=int, help='receives integer')
     args = parser.parse_args()
 
     return args
