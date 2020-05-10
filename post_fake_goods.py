@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 import argparse
 from faker import Faker
@@ -8,7 +8,7 @@ from random import randint
 faker = Faker()
 
 def post_goods(address, qty):
-    
+
     for i in range(qty):
         try:
             good = faker.word()
